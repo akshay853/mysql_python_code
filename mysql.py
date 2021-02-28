@@ -63,18 +63,12 @@ class sqlProperties:
 
 
 class mysql(sqlProperties):
-    def database_connection(self,table_name):
-     
+    def database_connection(self,table_name,colum12 = []):
         sql = sqlProperties()
-        sql.name = 'id'
-        sql.datatype = 'varchar'
-        #sql.length = 255
-        #sql.primaryKey = True
-        sql.NotNull = True
-        sql.autoIncrement = True
-        sql.foreignKey = True
+        sql.name, sql.datatype, sql.length, sql.primaryKey, sql.NotNull, sql.autoIncrement, sql.foreignKey = colum12
         sql.sqlProperties()
     
 
 mysql = mysql()
-mysql.database_connection("student")
+colum1 = ['name','int',None,True,True,False,False]
+mysql.database_connection("student",colum1)
